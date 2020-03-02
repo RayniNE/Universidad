@@ -54,7 +54,6 @@ namespace Universidad.Models
         }
 
 
-
         public void ActualizarEstudiante(int index, Alumno alumno)
         {
             int id = Alumnos.FindIndex(s => s.Boleta == index);

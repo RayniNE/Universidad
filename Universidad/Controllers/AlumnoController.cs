@@ -23,8 +23,7 @@ namespace Universidad.Controllers
         public IActionResult Agregar(Alumno a)
         {
             UniversidadManager.Instance.AgregarAlumno(a);
-            List<Alumno> alumn = UniversidadManager.Instance.ObtenerEstudiantes();
-            return View("Lista",alumn);
+            return View(a);
         }
 
         public IActionResult Eliminar(int? id)
