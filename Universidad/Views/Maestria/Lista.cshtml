@@ -1,0 +1,46 @@
+﻿@model List<Maestria>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<p>
+    <a asp-action="Agregar">Crear una nueva maestria</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID 
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Duración
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var maestria in Model) {
+        <tr>
+            <td>
+                @maestria.IDmaestria
+            </td>
+            <td>
+                @maestria.Nombre
+            </td>
+            <td>
+                @maestria.duracion
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Actualizar", new { id=maestria.IDmaestria  }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id=maestria.IDmaestria })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+﻿@model Maestria
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Seguro que desea eliminar la maestria?</h3>
+<div>
+    <h4>Maestria</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDmaestria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDmaestria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duracion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duracion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Eliminar">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Lista">Volver a la lista</a>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@model List<Universidad>
+
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<p>
+    <a asp-action="Create">Crear una nueva universidad</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Universidad uni in Model) {
+        <tr>
+            <td>
+                @uni.IDuniversidad)
+            </td>
+            <td>
+                @uni.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=uni.IDuniversidad }) |
+                @Html.ActionLink("Delete", "Delete", new { id=uni.Nombre })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
